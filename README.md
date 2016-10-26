@@ -1,3 +1,20 @@
+Web Application to display Baseball Game Information.
+--Based on mlb.com REST API--
+
+##Quick install:
+1. npm install
+2. npm start
+3. navigate to localhost/5555
+
+##Roadmap:
+
+
+##Technologies used:
+- Angular 2 -> Typescipt
+- Angular 2 Material
+- MLB API
+
+
 # Angular2-Seed Materialized [![Build Status](https://travis-ci.org/DeviantJS/angular2-seed-material2.svg?branch=master)](https://travis-ci.org/DeviantJS/angular2-seed-material2)
 > Current Material Version - 2.0.0-alpha.9-3
 
