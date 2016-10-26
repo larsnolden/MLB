@@ -1,0 +1,24 @@
+<form>
+
+  <label for="day">day: </label>
+  <select id="day" name="day" #day (onchange)="onDayChanged(day.value)">
+    <option>day</option>
+    <option *ngFor="let day of days">{{day}}</option>
+  </select>
+
+
+  <label for="month">month: </label>
+  <select id="month" #month name="month">
+    <option>month</option>
+    <option *ngFor="let month of months">{{month}}</option>
+  </select>
+
+  <label for="year">year: </label>
+  <select id="year" #year name="year">
+   <option>year</option>
+   <option *ngFor="let year of years">{{year}}</option>
+  </select>
+
+  <button md-raised-button type="button" (click)="onDateChanged([day.value, month.value, year.value])">update</button>
+
+</form>

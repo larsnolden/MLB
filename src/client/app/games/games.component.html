@@ -1,0 +1,11 @@
+<date-selector (dateChanged)="onDateRecieved($event)"></date-selector>
+
+<md-card *ngFor="let game of games">
+	<md-card-subtitle>{{this.game.status.status}}</md-card-subtitle>
+ 	<md-card-title>{{this.game.away_team_name}} <span class="score">{{this.game.linescore?.r.away}}</span><br>{{this.game.home_team_name}} <span class="score">{{this.game.linescore?.r.home}}</span></md-card-title>
+ 	<button md-button (click)="onSelect(this.game)">Details</button>
+</md-card>
+
+<md-card *ngIf="noGamesPlayed">
+	<md-card-title>No Games Played</md-card-title>
+</md-card>

@@ -1,0 +1,76 @@
+<md-card>
+	<md-grid-list cols="19" rowHeight="20px">
+		<md-grid-tile [rowspan]="1" [colspan]="4"></md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1" *ngFor="let i of this.boxscore?.linescore.inning_line_score">{{i.inning}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1"> </md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">R</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">H</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">E</md-grid-tile>
+
+		<md-grid-tile [rowspan]="1" [colspan]="3">{{this.boxscore?.home_team_code | uppercase}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1" *ngFor="let score of this.boxscore?.linescore.inning_line_score">{{score?.home}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">{{this.boxscore?.linescore.home_team_runs}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">{{this.boxscore?.linescore.home_team_hits}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">{{this.boxscore?.linescore.home_team_errors}}</md-grid-tile>
+
+		<md-grid-tile [rowspan]="1" [colspan]="3">{{this.boxscore?.away_team_code | uppercase}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1" *ngFor="let score of this.boxscore?.linescore.inning_line_score">{{score?.away}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">{{this.boxscore?.linescore.away_team_runs}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">{{this.boxscore?.linescore.away_team_hits}}</md-grid-tile>
+		<md-grid-tile [rowspan]="1" [colspan]="1">{{this.boxscore?.linescore.away_team_errors}}</md-grid-tile>
+
+	</md-grid-list>
+
+	<md-tab-group>
+		<md-tab>
+		<template md-tab-label>{{this.boxscore?.home_team_code | uppercase}}</template>
+			<template md-tab-content>
+				<md-grid-list cols="11" rowHeight="20px">
+					<md-grid-tile [rowspan]="1" [colspan]="3" class="name">Name</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1" *ngFor="let spec of this.specs">{{spec | uppercase}}</md-grid-tile>
+				</md-grid-list>
+				<md-grid-list cols="11" rowHeight="20px" *ngFor="let player of this.boxscore?.batting[0].batter">
+
+					<md-grid-tile [rowspan]="1" [colspan]="3" class="name" >{{player.name}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.ab}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.r}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.h}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.rbi}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.bb}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.so}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.avg}}</md-grid-tile>
+
+				</md-grid-list>
+			</template>
+		</md-tab>
+		<md-tab>
+			<template md-tab-label>{{this.boxscore?.away_team_code | uppercase}}</template>
+			<template md-tab-content>
+				<md-grid-list cols="11" rowHeight="20px">
+					<md-grid-tile [rowspan]="1" [colspan]="3" class="name">Name</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1" *ngFor="let spec of this.specs">{{spec | uppercase}}</md-grid-tile>
+				</md-grid-list>
+				<md-grid-list cols="11" rowHeight="20px" *ngFor="let player of this.boxscore?.batting[1].batter">
+
+					<md-grid-tile [rowspan]="1" [colspan]="3" class="name" >{{player.name}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1"></md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.ab}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.r}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.h}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.rbi}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.bb}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.so}}</md-grid-tile>
+					<md-grid-tile [rowspan]="1" [colspan]="1">{{player.avg}}</md-grid-tile>
+
+				</md-grid-list>
+			</template>
+		</md-tab>
+	</md-tab-group>
+</md-card>

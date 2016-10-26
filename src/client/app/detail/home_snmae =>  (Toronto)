@@ -1,0 +1,18 @@
+home_snmae =>  (Toronto)
+away_sname => (Baltimore)
+
+home_team_code => (tor)
+away_team_code => (bal)
+
+linescore.inning_line_score[0].home => linescore first inning home team 
+linescore.inning_line_score[0].inning => number of inning
+
+home_team_runs => R (Run)
+home_team_errors => E (Error)
+home_team_hits => H (Hits) 
+
+	player details: 
+	batting[0 or 1].team_flag  = home or away => identify array item for home / away team(maybe always same order?)
+
+	batting[0 or 1].batter[].name => batter name
+	batting[0 or 1].batter[].stat => specific stat

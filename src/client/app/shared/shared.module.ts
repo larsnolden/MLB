@@ -8,6 +8,11 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { NameListService } from './name-list/index';
 
+//import modules to bundle them in here
+//import { HeaderModule } from './header/header.module';
+import { GameDataService } from './game-data/index';
+import { GameDetailDataService } from './game-detail-data/index';
+
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
  */

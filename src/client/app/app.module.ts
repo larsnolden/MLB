@@ -6,12 +6,19 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
+
 import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 
+import { GamesModule } from './games/games.module';
+import { DetailModule } from './detail/detail.module';
+
+import { DetailRoutingModule } from './shared/detail-routing/detail-routing.module';
+
+
 @NgModule({
-  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), AboutModule, HomeModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), AboutModule, HomeModule, GamesModule, DetailModule, DetailRoutingModule, SharedModule.forRoot()],
   declarations: [AppComponent],
   providers: [{
     provide: APP_BASE_HREF,
