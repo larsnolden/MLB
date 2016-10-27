@@ -1,5 +1,4 @@
 Web Application to display Baseball Game Information.
---Based on mlb.com REST API--
 
 ##Quick install:
 1. npm install
@@ -7,10 +6,10 @@ Web Application to display Baseball Game Information.
 3. navigate to localhost/5555
 
 ##Roadmap:
-	https://trello.com/b/vAUXSZRe/mlb
+[Trello Board](https://trello.com/b/vAUXSZRe/mlb)
 
 ##Technologies used:
-- Angular 2 -> Typescipt
+- Angular 2 -> Typescipt :sparkles:
 - Angular 2 Material
 - MLB API
 
