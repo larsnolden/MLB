@@ -7,7 +7,7 @@ Web Application to display Baseball Game Information.
 3. navigate to localhost/5555
 
 ##Roadmap:
-
+	https://trello.com/b/vAUXSZRe/mlb
 
 ##Technologies used:
 - Angular 2 -> Typescipt
