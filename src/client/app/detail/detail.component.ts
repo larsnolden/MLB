@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { GameDetailDataService } from '../shared/index';
-import { DetailRoutingModule } from '../shared/detail-routing/detail-routing.module';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
  @Component ({

@@ -10,7 +10,7 @@ export class GameDetailDataService {
 	private detailDataUrl = "http://gd2.mlb.com/components/game/mlb/year_2016/month_10/day_04/gid_2016_10_04_balmlb_tormlb_1/boxscore.json";
 
 	// try modyify url function as input ->
-	get(url: string) {
+	get(url: any) {
     url = "http://gd2.mlb.com" + url + "/boxscore.json";
 		return this.http.get(url)
                     .map((res: Response) => res.json().data)

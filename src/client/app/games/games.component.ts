@@ -1,11 +1,10 @@
 import {Component, Input} from '@angular/core';
 import { GameDataService } from '../shared/index';
 import 'rxjs/add/operator/toPromise';
-import { DetailRoutingModule } from '../shared/detail-routing/detail-routing.module';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router';
+import { Location } from '@angular/common';
 
 
-//import { Game } from '../shared/game-data/game';
 /**
  * This class represents the lazy loaded games Component.
  */
@@ -22,6 +21,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
  	constructor(
     public gameDataService: GameDataService,
+    private route: ActivatedRoute,
+    private location: Location,
     private router: Router
   ) {}
 
@@ -50,12 +51,19 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
     this.getData(value);
   }
 
-  onSelect (game: any) {
-    this.router.navigate(['/detail', game.game_data_directory]);
-    console.log(game.away_team_name);
-    console.log(game.away_team_city);
-    console.log(game.game_data_directory);
+  toDetails (game: any) {
+    console.log(game);
+    console.log(this.game);
+    let link = ['/detail', game.game_data_directory];
+    this.router.navigate(link);
   }
+
+  // onSelect (game: any) {
+  //   this.router.navigate(['/detail', game.game_data_directory]);
+  //   console.log(game.away_team_name);
+  //   console.log(game.away_team_city);
+  //   console.log(game.game_data_directory);
+  // }
 
   // genPicUrl (games: any[]) {
   //     for(game of games) {

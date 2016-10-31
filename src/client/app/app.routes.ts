@@ -1,13 +1,12 @@
 import { Routes } from '@angular/router';
 
-import { AboutRoutes } from './about/index';
-import { HomeRoutes } from './home/index';
+//import my Routes
 import { GamesRoutes } from './games/index';
 import { DetailRoutes } from './detail/index';
+import { GamesAppRoutes } from './shared/games-routing/index';
 
 export const routes: Routes = [
-  ...HomeRoutes,
-  ...AboutRoutes,
   ...GamesRoutes,
-  ...DetailRoutes
+  ...DetailRoutes,
+  ...GamesAppRoutes
 ];

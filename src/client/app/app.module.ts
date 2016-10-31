@@ -1,3 +1,4 @@
+//Provided Components
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
@@ -6,19 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
-
-import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
-import { SharedModule } from './shared/shared.module';
-
+//My Components
 import { GamesModule } from './games/games.module';
 import { DetailModule } from './detail/detail.module';
-
-import { DetailRoutingModule } from './shared/detail-routing/detail-routing.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), AboutModule, HomeModule, GamesModule, DetailModule, DetailRoutingModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), GamesModule, DetailModule, SharedModule.forRoot()],
   declarations: [AppComponent],
   providers: [{
     provide: APP_BASE_HREF,

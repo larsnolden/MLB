@@ -4,12 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
-import { ToolbarModule } from './toolbar/toolbar.module';
-import { NavbarModule } from './navbar/navbar.module';
-import { NameListService } from './name-list/index';
-
-//import modules to bundle them in here
-//import { HeaderModule } from './header/header.module';
+//import my modules to bundle them in here
 import { GameDataService } from './game-data/index';
 import { GameDetailDataService } from './game-detail-data/index';
 
@@ -19,14 +14,13 @@ import { GameDetailDataService } from './game-detail-data/index';
 
 @NgModule({
   imports: [CommonModule, RouterModule, MaterialModule.forRoot()],
-  exports: [ToolbarModule, NavbarModule, MaterialModule,
-    CommonModule, FormsModule, RouterModule]
+  exports: [CommonModule, FormsModule, RouterModule]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [NameListService]
+       providers: [GameDataService, GameDetailDataService]
     };
   }
 }

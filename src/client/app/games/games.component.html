@@ -3,7 +3,8 @@
 <md-card *ngFor="let game of games">
 	<md-card-subtitle>{{this.game.status.status}}</md-card-subtitle>
  	<md-card-title>{{this.game.away_team_name}} <span class="score">{{this.game.linescore?.r.away}}</span><br>{{this.game.home_team_name}} <span class="score">{{this.game.linescore?.r.home}}</span></md-card-title>
- 	<button md-button (click)="onSelect(this.game)">Details</button>
+ 	<button md-button (click)="toDetails(this.game)">Details</button>
+ 	<!-- <a [routerLink]="['/detail', this.game.game_data_directory]">Details</a> -->
 </md-card>
 
 <md-card *ngIf="noGamesPlayed">
